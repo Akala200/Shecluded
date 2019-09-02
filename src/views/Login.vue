@@ -1,5 +1,12 @@
 <template>
   <section id="auth">
+    <div class="vld-parent">
+      <loading
+        :active.sync="isLoading"
+        :can-cancel="true"
+        :is-full-page="fullPage"
+      ></loading>
+    </div>
       <div class="row">
         <div class="col justify-content-center mt-5">
 			<div class="container reg">
@@ -13,13 +20,13 @@
 			  <div class="form-group">
 			  </div>
 			  <div class="form-group">
-                <input type="email" class="form-control" id="inputPassword4" placeholder="Email"/>
+                <input type="email" class="form-control" v-model="email" id="inputPassword4" placeholder="Email" required/>
 			  </div>
 			  <div class="form-group">
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password"/>
+                <input type="password" class="form-control" v-model="password" id="inputPassword4" placeholder="Password" required/>
 			  </div>
 			  <div class="form-group">
-			  <button type="button" class="btn  btn-lg btn-block">Login</button>
+			  <button type="button" @click.prevent="login()" class="btn  btn-lg btn-block">Login</button>
 			  </div>
 
 			  <div class="text-center">
@@ -37,11 +44,61 @@
 </template>
 
 <script>
-import Navigation from "@/components/Landing/Navigation.vue";
+// Import component
+import Loading from "vue-loading-overlay";
+// Import stylesheet
+import "vue-loading-overlay/dist/vue-loading.css";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+import 'sweetalert2/src/sweetalert2.scss'
 
 export default {
-  name: "components",
-  components: { Navigation }
+  data() {
+    return {
+      email: "",
+      password: "",
+      isLoading: false,
+      fullPage: true   
+    };
+  },
+  components: {
+    Loading
+  },
+  methods: {
+    login: function() {
+      this.isLoading = true;
+      let data = {
+        email: this.email,
+        password: this.password
+      };
+            const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+})
+      this.$store
+        .dispatch("login", data)
+        .then(
+          () =>
+            setTimeout(() => {
+              this.isLoading = false;
+            }, 5000),
+
+Toast.fire({
+  type: 'success',
+  title: 'Login was successful'
+}),
+          this.$router.push("dashboard")
+        )
+        .catch(err =>
+        Toast.fire({
+  type: 'error',
+  title: 'Could not login'
+})
+        );
+    }
+  }
 };
 </script>
  

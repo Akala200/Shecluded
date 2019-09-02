@@ -1,5 +1,12 @@
 <template>
   <section id="auth">
+    <div class="vld-parent">
+      <loading
+        :active.sync="isLoading"
+        :can-cancel="true"
+        :is-full-page="fullPage"
+      ></loading>
+    </div>
       <div class="row">
         <div class="col justify-content-center mt-5">
 			<div class="container reg">
