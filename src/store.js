@@ -53,10 +53,28 @@ export default new Vuex.Store({
 	    register({commit}, user){
 	    	return new Promise((resolve, reject) => {
 	            commit('auth_request')
-	            axios({url: 'http://localhost:3000/register', data: user, method: 'POST' })
+	            axios({url: 'https://shecludedapi.herokuapp.com/api/v1/shecluded/applicant/register', data: user, method: 'POST' })
 	            .then(resp => {
-	                const user = resp.data.user
-	                commit('auth_success', token, user)
+                  const user = resp.data.data
+                  console.log(user);
+	                commit('auth_success', user)
+	                resolve(resp)
+	            })
+	            .catch(err => {
+	                commit('auth_error', err)
+	                reject(err)
+	            })
+	        })
+      },
+      
+      verify({commit}, token){
+	    	return new Promise((resolve, reject) => {
+	            commit('auth_request')
+	            axios({url: 'https://shecludedapi.herokuapp.com/api/v1/shecluded/applicant/register', data: token, method: 'POST' })
+	            .then(resp => {
+                  const user = resp.data.data
+                  console.log(user);
+	                commit('auth_success', user)
 	                resolve(resp)
 	            })
 	            .catch(err => {

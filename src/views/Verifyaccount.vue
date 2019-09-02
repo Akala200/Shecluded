@@ -13,10 +13,10 @@
 			  <div class="form-group">
 			  </div>
 			  <div class="form-group">
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Verification code"/>
+                <input type="text" class="form-control"  v-model="token" id="inputPassword4" placeholder="Verification code" required/>
 			  </div>
 			  <div class="form-group">
-			  <button type="button" class="btn  btn-lg btn-block">Verify</button>
+			  <button type="button"  @click.prevent="verify()" class="btn  btn-lg btn-block">Verify</button>
 			  </div>
 
 			  <div class="text-center">
@@ -34,11 +34,62 @@
 </template>
 
 <script>
-import Navigation from "@/components/Landing/Navigation.vue";
+// Import component
+import Loading from "vue-loading-overlay";
+// Import stylesheet
+import "vue-loading-overlay/dist/vue-loading.css";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+import 'sweetalert2/src/sweetalert2.scss'
 
 export default {
-  name: "components",
-  components: { Navigation }
+  data() {
+    return {
+      token: "",
+      isLoading: false,
+      fullPage: true   
+    };
+  },
+  components: {
+    Loading
+  },
+  methods: {
+    verify: function() {
+      this.isLoading = true;
+      let data = {
+        token: this.token,
+      };
+  const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+})
+      if(this.token !== ''){
+        this.$store
+        .dispatch("verify", data)
+        .then( function (response) {
+           (response) =>
+            setTimeout(() => {
+              this.isLoading = false;
+            }, 5000),
+        
+            Toast.fire({
+  type: 'success',
+  title: 'Email sent'
+})
+        }
+  )
+        .catch( function (error) {
+           Toast.fire({
+  type: 'error',
+  title: 'Invalid token'
+})
+        } 
+        );
+      }
+    }
+  }
 };
 </script>
  
