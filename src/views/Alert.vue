@@ -1,44 +1,24 @@
 <template>
-  <section id="auth">
-     <div class="vld-parent">
-      <loading
-        :active.sync="isLoading"
-        :can-cancel="true"
-        :is-full-page="fullPage"
-      ></loading>
-    </div>
+  <section id="info">
     <div class="row">
       <div class="mx-auto mt-3 top-logo">
             <img class="justify-content-end" src="/img/logo.png" />
           </div>
     </div>
+    <div class="row">
+       <div class="mx-auto text-center mt-2 top-logo">
+            <h4>Your phone number has<br>been verified</h4>
+        </div>
+      </div>
       <div class="row">
-        <div class="col-lg-6 justify-content-center mt-5">
-			<div class="container reg">
-          <div class="container">
-            <h1>Verify your phone number</h1>
-            <p>To apply for loan and funding</p>
-            <form class="mt-5">
-			  <div class="form-group">
-			  </div>
-			  <div class="form-group">
-                <input type="text" class="form-control"  v-model="token" id="inputPassword4" placeholder="Verification code" required/>
-			  </div>
-			  <div class="form-group">
-			  <button type="button"  @click.prevent="verify()" class="btn  btn-lg btn-block">Verify</button>
-			  </div>
-
-			  <div class="text-center">
-			    <p>Didn't get a code? Send again</p>
-				<p id="terms">By clicking on verify, you agree to our term & conditions and privacy policy</p>
-			</div>
-            </form>
+       <div class="mx-auto bottom-logo">
+            <img class="justify-content-end img" src="/img/ok.png" />
           </div>
+      </div>
+      <div class="row">
+       <div class="mx-auto text-center">
+            <p class="info">We have sent you an email.<br> Please click on the verification link in<br> the email to confirm your registration.</p>
         </div>
-        </div>
-        <div class="col-lg-6 d-none d-lg-block">
-           <img class="side-img" src="/img/verify.png"/>
-		</div>
       </div>
   </section>
 </template>
@@ -80,7 +60,14 @@ export default {
         .dispatch("verify", data)
         .then( function (response) {
            (response) =>
-             this.$router.push("alert")
+            setTimeout(() => {
+              this.isLoading = false;
+            }, 5000),
+        
+            Toast.fire({
+  type: 'success',
+  title: 'Email sent'
+})
         }
   )
         .catch( function (error) {
@@ -91,56 +78,49 @@ export default {
         } 
         );
       }
-       setTimeout(() => {
-              this.isLoading = false;
-            }, 3000)
     }
   }
 };
 </script>
  
 <style scoped>
-#auth  {
+#info  {
   width: inherit;
 }
-#auth h1 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-style: normal;
-  font-weight: bolder;
-  font-size: 32px;
-  line-height: 37px;
-  color: #000000;
-}
-#auth button {
+
+#info button {
     height: 48px;
 	background: #F740AC;
     border-radius: 4px;
 	color:#ffffff;
 }
-#auth p {
-	font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 17px;
-line-height: 19px;
-color: #000000;
-}
-#auth p span {
+
+#info p span {
 	color: #F740AC !important;
 	   text-decoration: none;
 
 }
-#auth p  a {
-	   text-decoration: none;
+
+#info .info {
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 23px;
+text-align: center;
+
+color: #000000;
 }
-#auth #terms {
+#info #terms {
 		font-size: 13px !important;
 }
-#auth .side-img {
+#info .side-img {
 	 display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px !important;
+}
+#info .img {
+  width: 120px;
 }
 
 .form-control:focus {
@@ -149,15 +129,31 @@ color: #000000;
 }
 
 @media screen and (min-width:1040px) {
- #auth .reg {
+ #info .reg {
 	padding-left: 90px;
 	padding-right: 60px;
 }
 
-#auth .top-logo {
+#info .top-logo {
   margin-bottom: 60px !important;
 }
 
+#info .bottom-logo {
+  margin-bottom: 40px !important;
+}
+}
+@media screen and (max-width:1100px) {
+ 
+#info .top-logo {
+  margin-bottom: 50px !important;
+  padding: 7px;
+}
+#info p {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 13px;
+
+}
 }
 
 </style>

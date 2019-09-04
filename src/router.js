@@ -14,10 +14,10 @@ export default new Router({
         { path: '', name: 'login', component: () => import('@/views/Login.vue') },
         { path: 'landing', name: 'landing', component: () => import('@/views/Landing.vue') }, 
         { path: 'not-found', name: 'not-found', component: () => import('@/views/NotFound.vue') },
-        { path: 'media', name: 'media', component: () => import('@/views/Media.vue') },
+        { path: 'alert', name: 'alert', component: () => import('@/views/Alert.vue') },
+        { path: 'welcome', name: 'welcome', component: () => import('@/views/Welcome.vue') },
         { path: 'register', name: 'register', component: () => import('@/views/Register.vue') },
         { path: 'verify', name: 'verify', component: () => import('@/views/Verifyaccount.vue') },
-
       ]
     },
     
