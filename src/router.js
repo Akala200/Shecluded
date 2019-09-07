@@ -19,6 +19,7 @@ export default new Router({
         { path: 'register', name: 'register', component: () => import('@/views/Register.vue') },
         { path: 'verify', name: 'verify', component: () => import('@/views/Verifyaccount.vue') },
         { path: 'dashboard', name: 'dashboard', component: () => import('@/views/Dashboard.vue') },
+        { path: 'details', name: 'details', component: () => import('@/views/Details.vue') },
       ]
     },
     
