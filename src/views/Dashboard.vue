@@ -5,7 +5,7 @@
         <button class="btn ml-auto logout-button">LOGOUT</button>
     </nav>
     <div class="row pl-5 pr-5">
-        <div class="col-lg-3">
+        <div class="col-lg-3 grid">
             <div class="card mini-card">
                 <img src="img/avatar2.png" class="card-img-top rounded-circle mx-auto mt-5" alt="..." />
                 <h5 class="text-center mt-4">Adesanya Johnson</h5>
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-9 grid">
             <div>
                 <div class="card card-main">
                     <div class="card-body">
@@ -384,6 +384,11 @@ ul li a:active {
         border-right: none;
         border-bottom: 0.25px solid #f740ac !important;
     }
+}
+@media screen and (min-width: 1050px) {
+  #dashboard .grid {
+    padding: 50px !important;
+  }
 }
 </style>
 

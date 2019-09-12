@@ -12,7 +12,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueSweetalert2 from 'vue-sweetalert2';
 import {initialize} from '@/utils/general.js';
 import '../node_modules/nprogress/nprogress.css'
-
+window.$ = require('jquery')
+window.JQuery = require('jquery')
 
 initialize(store, router);
 
