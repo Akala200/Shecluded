@@ -5,13 +5,13 @@
         <button class="btn ml-auto logout-button">LOGOUT</button>
     </nav>
     <div class="row pl-5 pr-5">
-        <div class="col-lg-3 grid">
+        <div class="col-lg-3">
             <div class="card mini-card">
                 <img src="img/avatar2.png" class="card-img-top rounded-circle mx-auto mt-5" alt="..." />
                 <h5 class="text-center mt-4">Adesanya Johnson</h5>
                 <div class="card-body">
                     <p class="card-text text-center">I am a business woman building a fashion brand and empowering young fashion entreprenuers.</p>
-                    <div class="row pl-4 pr-4">
+                    <div class="row pl-4 pr-4 cir">
                         <div class="col-3 icon">
                             <img src="img/blank.png" />
                         </div>
@@ -33,8 +33,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-9 grid">
-            <div>
+        <div class="col-lg-9">
+            <div class="card-ga">
                 <div class="card card-main">
                     <div class="card-body">
                         <div class="d-flex justify-content-between head-row">
@@ -65,9 +65,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5 card-ga2">
                 <div class="col-lg-4">
-                    <div class="card mb-3" style="max-width: 18rem;">
+                    <div class="card mb-3 mini-card" style="width: auto;">
                         <div class="">
                             <div class="d-flex justify-content-between">
                                 <div class="mr-auto pl-3 pt-3">
@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="card mb-3" style="max-width: 18rem;">
+                    <div class="card mb-3 mini-card" style="width: auto;">
                         <div class="">
                             <div class="d-flex justify-content-between">
                                 <div class="mr-auto pl-3 pt-3">
@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="card mb-3" style="max-width: 18rem;">
+                    <div class="card mb-3 mini-card" style="width: auto;">
                         <div class="">
                             <div class="d-flex justify-content-between">
                                 <div class="mr-auto pl-3 pt-3">
@@ -120,7 +120,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-lg-4">
-                    <div class="card mb-3" style="max-width: 18rem;">
+                    <div class="card mb-3 side-card" style="width: auto;">
                         <div class="">
                             <div class="pl-3 pt-3 mt-5 loan">
                                 <h2 class="card-title">View My<br>Loans</h2>
@@ -129,7 +129,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <div class="card mb-3" style="max-width: 40rem;">
+                    <div class="card mb-3 row-table" style="max-width: auto;">
                         <div class="">
                             <div class="d-flex justify-content-between table-row">
                                 <p class="mr-auto">Transaction</p>
@@ -385,11 +385,121 @@ ul li a:active {
         border-bottom: 0.25px solid #f740ac !important;
     }
 }
-@media screen and (min-width: 1050px) {
-  #dashboard .grid {
-    padding: 50px !important;
+
+
+ @media only screen and (min-width: 599px) and (max-width: 900px) {
+     #dashboard .card-ga {
+   
+    margin-bottom: -81px !important;
+
+}
+  #dashboard .mini-card {
+          margin-top: 0px !important;
+  }
+#dashboard .card-ga2 {
+   
+    margin-bottom: -48px !important;
+
+}
+ }
+
+@media only screen and (min-width: 900px) and (max-width: 1099px) {
+     #dashboard .card-ga {
+   
+    margin-bottom: -81px !important;
+
+}
+ 
+#dashboard .card-ga2 {
+   
+    margin-bottom: -48px !important;
+
+}
+  #dashboard .card-ga {
+   
+    margin-bottom: -81px !important;
+
+}
+  #dashboard .mini-card {
+         width: 210px !important;
+  }
+
+  #dashboard .cir {
+      padding-left: 2px !important;
+ 
   }
 }
+
+@media screen and (min-width: 1350px) {
+   #dashboard .card-main {
+    margin-top: 50px;
+    width: 1017px !important;
+}
+
+#dashboard .card-ga {
+   
+    margin-bottom: -81px !important;
+
+}
+ 
+#dashboard .card-ga2 {
+   
+    margin-bottom: -48px !important;
+
+}
+  #dashboard .card-ga {
+   
+    margin-bottom: -81px !important;
+
+}
+#dashboard .mini-card {
+    width:  330px !important;
+}
+
+#dashboard .row-table {
+     width: 676px;
+}
+#dashboard .card2[data-v-22ba47ca] {
+    width: 330px !important;
+    height: 50px;
+    background: #f740ac;
+}
+#dashboard .side-card {
+    width: 330px !important;
+    height: 265px !important;
+}
+}
+
+ @media only screen and (min-width: 1100px) and (max-width: 1300px) {
+       #dashboard .card-main {
+    margin-top: 50px;
+    width: 890px !important;
+}
+
+#dashboard .mini-card {
+    width:  290px !important;
+}
+#dashboard .card-ga {
+   
+    margin-bottom: -81px !important;
+
+}
+
+#dashboard .card-ga2 {
+   
+    margin-bottom: -48px !important;
+
+}
+#dashboard .row-table {
+     width: 590px;
+}
+#dashboard .card2[data-v-22ba47ca] {
+    width: 290px !important;
+    height: 50px;
+    background: #f740ac;
+}
+    }
+
 </style>
 
 <script>
