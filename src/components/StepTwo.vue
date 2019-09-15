@@ -71,7 +71,7 @@ export default {
 <style scoped>
 #form2  form {
   margin-top: 20px;
-  width: 600px;
+  width: 500px;
 }
 
 #form2 .icon img {
@@ -83,7 +83,7 @@ export default {
 }
 
 #form2 ul {
-  width: 600px;
+  width: 500px;
     margin: auto;
 }
 #form2 .veri {

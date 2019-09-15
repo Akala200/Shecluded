@@ -23,7 +23,7 @@ export default {
 <style scoped>
 form {
   margin-top: 20px;
-  width: 400px;
+  width: 500px;
 }
 
 #form3 .icon img {

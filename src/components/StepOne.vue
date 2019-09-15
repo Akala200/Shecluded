@@ -58,7 +58,7 @@ export default {
 <style scoped>
 form {
   margin-top: 20px;
-  width: 400px;
+  width: 500px;
 }
 
 #form1 .icon img {

@@ -165,7 +165,7 @@ color: #000000;
 
 .button {
     height: 48px;
-    width: 400px;
+    width: 500px;
 	background: #F740AC;
     border-radius: 4px;
 	color:#ffffff;
@@ -189,7 +189,7 @@ line-height: 14px;
 
 form {
   margin-top: 20px;
-  width: 400px;
+  width: 500px;
 }
 
 #form4 .icon img {

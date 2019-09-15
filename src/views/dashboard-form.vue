@@ -119,18 +119,11 @@
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col-lg-4">  
+                <div class="col-lg-4">
                     <div class="card mb-3 side-card" style="width: auto;">
                         <div class="">
                             <div class="pl-3 pt-3 mt-5 loan">
                                 <h2 class="card-title">View My<br>Loans</h2>
-                            </div>
-                        </div>
-                    </div>
-                       <div class="card mb-3 side-card invite" style="width: auto;">
-                        <div class="">
-                            <div class="loan2 text-center">
-                                <h2 class="card-title2">Invite A Friend</h2>
                             </div>
                         </div>
                     </div>
@@ -170,28 +163,6 @@
                                                 <td class="amount">₦ 100,000.00</td>
 
                                             </tr>
-                                             <tr>
-                                                <th class="date">Sept 06</th>
-                                                <td class="table-text">Business Loan</td>
-                                                <td><button class="btn table-btn">Credit</button></td>
-                                                <td class="amount">₦ 100,000.00</td>
-
-                                            </tr>
-                                             <tr>
-                                                <th class="date">Sept 06</th>
-                                                <td class="table-text">Business Loan</td>
-                                                <td><button class="btn table-btn">Credit</button></td>
-                                                <td class="amount">₦ 100,000.00</td>
-
-                                            </tr>
-                                             <tr>
-                                                <th class="date">Sept 06</th>
-                                                <td class="table-text">Business Loan</td>
-                                                <td><button class="btn table-btn">Credit</button></td>
-                                                <td class="amount">₦ 100,000.00</td>
-
-                                            </tr>
-                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -230,15 +201,6 @@ ul li:active {
     color: #f740ac;
 }
 
-#dashboard .loan2 .card-title2 {
-    color: #ffffff  !important;
-     margin-top: 75px !important;
-}
-
-#dashboard .invite {
-    background: #F740AC;
-}
-
 #dashboard ul li a:hover,
 ul li a:active {
     text-decoration: none;
@@ -275,7 +237,7 @@ ul li a:active {
     margin-top: 50px;
     min-width: auto;
 }
-#dashboard .loan .card
+
 #dashboard .head-row {
     border-bottom: 0.25px solid #f740ac;
     width: auto;
@@ -417,7 +379,6 @@ ul li a:active {
     margin-bottom: 43px !important;
 }
 
-
 @media screen and (max-width: 991px) {
     #dashboard .small-card {
         border-right: none;
@@ -472,7 +433,7 @@ ul li a:active {
 @media screen and (min-width: 1350px) {
    #dashboard .card-main {
     margin-top: 50px;
-    width: 999px !important;
+    width: 1017px !important;
 }
 
 #dashboard .card-ga {
@@ -492,31 +453,31 @@ ul li a:active {
 
 }
 #dashboard .mini-card {
-    width:  320px !important;
+    width:  330px !important;
 }
 
 #dashboard .row-table {
-     width: 660px;
+     width: 676px;
 }
 #dashboard .card2[data-v-22ba47ca] {
-    width: 320px !important;
+    width: 330px !important;
     height: 50px;
     background: #f740ac;
 }
 #dashboard .side-card {
-    width: 320px !important;
-    height: 208px !important;
+    width: 330px !important;
+    height: 265px !important;
 }
 }
 
  @media only screen and (min-width: 1100px) and (max-width: 1300px) {
        #dashboard .card-main {
     margin-top: 50px;
-    width: 880px !important;
+    width: 890px !important;
 }
 
 #dashboard .mini-card {
-    width:  280px !important;
+    width:  290px !important;
 }
 #dashboard .card-ga {
    
@@ -529,15 +490,11 @@ ul li a:active {
     margin-bottom: -48px !important;
 
 }
-#dashboard .side-card {
-        width: 280px !important;
-    height: 209px !important;
-}
 #dashboard .row-table {
-     width: 580px;
+     width: 590px;
 }
 #dashboard .card2[data-v-22ba47ca] {
-    width: 280px !important;
+    width: 290px !important;
     height: 50px;
     background: #f740ac;
 }
