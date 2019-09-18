@@ -22,7 +22,7 @@
 			  <div class="form-group">
 			  </div>
 			  <div class="form-group">
-                <input type="text" class="form-control"  v-model="token" id="inputPassword4" placeholder="Verification code" required/>
+                <input type="text" class="form-control"  v-model="token" id="code" placeholder="Verification code" required/>
 			  </div>
 			  <div class="form-group">
 			  <button type="button"  @click.prevent="verify()" class="btn  btn-lg btn-block">Verify</button>
@@ -78,18 +78,27 @@ export default {
       if(this.token !== ''){
         this.$store
         .dispatch("verify", data)
-        .then( function (response) {
-           (response) =>
-             this.$router.push("alert")
-        }
-  )
-        .catch( function (error) {
-           Toast.fire({
+         .then((res) => { 
+    setTimeout(() => {
+              this.isLoading = false;
+            }, 2000),
+    status = res.status; 
+    console.log(res.data)
+   Toast.fire({
+  type: 'success',
+  title: res.data
+}),
+    this.$router.push("alert")
+  })
+  .catch((err) => {
+     setTimeout(() => {
+              this.isLoading = false;
+            }, 2000),
+    Toast.fire({
   type: 'error',
-  title: 'Invalid token'
+  title: 'Invalid Code'
 })
-        } 
-        );
+  });
       }
        setTimeout(() => {
               this.isLoading = false;

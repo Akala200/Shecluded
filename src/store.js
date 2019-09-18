@@ -70,11 +70,14 @@ export default new Vuex.Store({
       verify({commit}, token){
 	    	return new Promise((resolve, reject) => {
 	            commit('auth_request')
-	            axios({url: 'https://shecludedapi.herokuapp.com/api/v1/shecluded/applicant/register', data: token, method: 'POST' })
+	            axios({url: 'https://shecludedapi.herokuapp.com/api/v1/shecluded/applicant/confirmation', data: token, method: 'POST' })
 	            .then(resp => {
-                  const user = resp.data.data
-                  console.log(user);
-	                commit('auth_success', user)
+					const token = resp.data.token
+	                const user = resp.data.user
+	                localStorage.setItem('token', token, 'user', user)
+	                // Add the following line:
+	                axios.defaults.headers.common['Authorization'] = token
+	                commit('auth_success', token, user)
 	                resolve(resp)
 	            })
 	            .catch(err => {

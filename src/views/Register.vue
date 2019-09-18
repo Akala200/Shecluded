@@ -44,7 +44,7 @@
                 <input
                   type="email"
                   class="form-control"
-                  id="inputPassword4"
+                  id="email"
                   v-model="email"
                   placeholder="Email"
                   required
@@ -54,7 +54,7 @@
                 <input
                   type="phone"
                   class="form-control"
-                  id="inputPassword4"
+                  id="phone"
                   v-model="telephone"
                   placeholder="Mobile Number"
                   required
@@ -141,26 +141,25 @@ export default {
   showConfirmButton: false,
   timer: 3000
 })
-      this.$store
+this.$store
         .dispatch("register", data)
-        .then(
-          () =>
-            setTimeout(() => {
+ .then((res) => { 
+    setTimeout(() => {
               this.isLoading = false;
             }, 5000),
-
-Toast.fire({
+    status = res.status; 
+   Toast.fire({
   type: 'success',
-  title: 'Signup was successful'
+  title: res.data.message
 }),
-          this.$router.push("verify")
-        )
-        .catch(err =>
-        Toast.fire({
+    this.$router.push("verify")
+  })
+  .catch((err) => {
+    Toast.fire({
   type: 'error',
-  title: 'Could not signup'
+  title: err
 })
-        );
+  });
     }
   }
 };

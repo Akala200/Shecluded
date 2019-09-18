@@ -13,7 +13,7 @@
 			  <div class="form-group">
 			  </div>
 			  <div class="form-group">
-                <input type="email" class="form-control" id="inputPassword4" placeholder="Email"/>
+                <input type="email" class="form-control" id="email" placeholder="Email"/>
 			  </div>
 			  <div class="form-group">
                 <input type="password" class="form-control" id="inputPassword4" placeholder="Password"/>

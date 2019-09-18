@@ -28,7 +28,7 @@ import { mapActions } from 'vuex';
         })
       }
     },
-    created: function () {
+    /**created: function () {
       this.$http.interceptors.response.use(undefined, function (err) {
         return new Promise(function (resolve, reject) {
           if (err.status === 401 && err.config && !err.config.__isRetryRequest) {
@@ -38,6 +38,7 @@ import { mapActions } from 'vuex';
         });
       });
     }
+     */ 
   }
 </script>
 <style>
