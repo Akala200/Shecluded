@@ -15,7 +15,7 @@
     "bootstrap-vue": "^2.0.0-rc.19",
     "express": "^4.16.4",
     "flatpickr": "^4.5.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "nouislider": "^11.1.0",
     "nprogress": "^0.2.0",
